@@ -1,9 +1,13 @@
+import Header from "./components/header/Header"
+
 
 function App() {
 
   return (
     <>
-      <h1>Hi Pets</h1>
+      <div className="hero_area ">
+        <Header />
+      </div>
     </>
   )
 }
