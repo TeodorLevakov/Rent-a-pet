@@ -1,4 +1,12 @@
 export default function ArticleCreate() {
+    const createArticleSubmitHandler = (e) => {
+        e.preventDefault();
+
+        const articleData = Object.fromEntries(new FormData(e.currentTarget));
+        console.log(articleData);
+    }
+
+
     return (
         <section className="contact_section layout_padding-top">
             <div className="container-fluid">
@@ -6,11 +14,10 @@ export default function ArticleCreate() {
                     <div className="col-md-5 offset-md-1">
                         <div className="form_container">
                             <div className="heading_container">
-                                <img src="images/heading-img.png" alt="" />
+                            <img src="images/heading-img.png" alt="" />
                                 <h2>Create Article</h2>
-                                
                             </div>
-                            <form action="">
+                            <form id="create" onSubmit={createArticleSubmitHandler}>
                                 <div>
                                     <input type="text" id="name" name="name" placeholder="Animal name " />
                                 </div>
