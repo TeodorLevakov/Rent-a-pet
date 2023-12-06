@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as articleService from "../../services/articleService";
+import ArticleItem from "./article-Item/ArticleItem";
 
 
 
@@ -18,7 +19,7 @@ export default function Articles() {
         <section className="client_section layout_padding">
             <div className="container">
                 {/* <div className="heading_container">
-                    <img src="images/heading-img.png" alt="" />
+                    <img src="/images/heading-img.png" alt="" />
                     <h2>What Says Our Customer</h2>
                     <p>
                         It is a long established fact that a reader will be distracted by the
@@ -30,90 +31,11 @@ export default function Articles() {
                     data-ride="carousel"
                 >
                     <div >
-                        <div >
-                            <div className="box">
-                                <div className="img-box">
-                                    <img src="images/client.png" alt="" />
-                                </div>
-                                <div className="detail-box">
-                                    <h4>Jack Mengo1</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted
-                                        by the readable cIt is a long established fact that a reader
-                                        will be distracted by the readable c
-                                    </p>
-                                    <img src="images/quote.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
+                       
+                       {articles.map(a => <ArticleItem key={a._id} {...a}/>)}
 
-                        <div>
-                            <div className="box">
-                                <div className="img-box">
-                                    <img src="images/client.png" alt="" />
-                                </div>
-                                <div className="detail-box">
-                                    <h4>Jack Mengo1</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted
-                                        by the readable cIt is a long established fact that a reader
-                                        will be distracted by the readable c
-                                    </p>
-                                    <img src="images/quote.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
+                       {articles.length === 0 && (<h3>No articles available</h3>)}
 
-
-
-                        <div className="carousel-item active">
-                            <div className="box">
-                                <div className="img-box">
-                                    <img src="images/client.png" alt="" />
-                                </div>
-                                <div className="detail-box">
-                                    <h4>Jack Mengo1</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted
-                                        by the readable cIt is a long established fact that a reader
-                                        will be distracted by the readable c
-                                    </p>
-                                    <img src="images/quote.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="box">
-                                <div className="img-box">
-                                    <img src="images/client.png" alt="" />
-                                </div>
-                                <div className="detail-box">
-                                    <h4>Jack Mengo</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted
-                                        by the readable cIt is a long established fact that a reader
-                                        will be distracted by the readable c
-                                    </p>
-                                    <img src="images/quote.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="box">
-                                <div className="img-box">
-                                    <img src="images/client.png" alt="" />
-                                </div>
-                                <div className="detail-box">
-                                    <h4>Jack Mengo</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted
-                                        by the readable cIt is a long established fact that a reader
-                                        will be distracted by the readable c
-                                    </p>
-                                    <img src="images/quote.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     {/* <div className="carousel_btn-box">
                         <a

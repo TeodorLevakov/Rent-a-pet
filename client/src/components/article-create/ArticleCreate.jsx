@@ -11,14 +11,17 @@ export default function ArticleCreate() {
         const articleData = Object.fromEntries(new FormData(e.currentTarget));
         console.log(articleData);
 
-        try {
-            await articleService.create(articleData);
+        const result = await articleService.create(articleData);
+        console.log(result);
+        navigate('/articles');
+        // try {
+        //     await articleService.create(articleData);
         
-            navigate('/articles');
-        } catch (err) {
-            //Err notification
-            console.log(err);
-        }
+        //     navigate('/articles');
+        // } catch (err) {
+        //     //Err notification
+        //     console.log(err);
+        // }
     }
 
 
@@ -29,7 +32,7 @@ export default function ArticleCreate() {
                     <div className="col-md-5 offset-md-1">
                         <div className="form_container">
                             <div className="heading_container">
-                            <img src="images/heading-img.png" alt="" />
+                            <img src="/images/heading-img.png" alt="" />
                                 <h2>Create Article</h2>
                             </div>
                             <form id="create" onSubmit={createArticleSubmitHandler}>
