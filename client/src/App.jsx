@@ -13,6 +13,7 @@ import Us from "./components/us/Us"
 import Articles from "./components/articles/Articles"
 import Register from "./components/register/Register"
 import ArticleCreate from "./components/article-create/ArticleCreate"
+import Login from "./components/login/Login"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/articles" element={<Articles />}/>
           <Route path="/articles/create" element={<ArticleCreate />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />}/>
         </Routes>
       </div>
 
