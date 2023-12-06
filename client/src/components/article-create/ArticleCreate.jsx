@@ -1,9 +1,24 @@
+import { useNavigate } from "react-router-dom";
+import * as articleService from "../../services/articleService";
+
+
 export default function ArticleCreate() {
-    const createArticleSubmitHandler = (e) => {
+    const navigate = useNavigate();
+
+    const createArticleSubmitHandler = async (e) => {
         e.preventDefault();
 
         const articleData = Object.fromEntries(new FormData(e.currentTarget));
         console.log(articleData);
+
+        try {
+            await articleService.create(articleData);
+        
+            navigate('/articles');
+        } catch (err) {
+            //Err notification
+            console.log(err);
+        }
     }
 
 

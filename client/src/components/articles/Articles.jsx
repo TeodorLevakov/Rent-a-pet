@@ -1,4 +1,19 @@
+import { useEffect, useState } from "react";
+import * as articleService from "../../services/articleService";
+
+
+
+
 export default function Articles() {
+
+    const [articles, setArticles] = useState([]);
+
+    useEffect(() => {
+        articleService.getAll()
+            .then(result => setArticles(result));
+    }, []);
+
+    console.log(articles);
     return (
         <section className="client_section layout_padding">
             <div className="container">
