@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom"
+
 import About from "./components/about/About"
 import Animal from "./components/animal/Animal"
 import Cliente from "./components/cliente/Cliente"
@@ -6,8 +8,10 @@ import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
 import Info from "./components/info/Info"
 import Pet from "./components/pet/Pet"
-import Slider from "./components/slider/Slider"
+import Home from "./components/home/Home"
 import Us from "./components/us/Us"
+import Articles from "./components/articles/Articles"
+import Register from "./components/register/Register"
 
 
 function App() {
@@ -16,10 +20,15 @@ function App() {
     <>
       <div className="hero_area ">
         <Header />
-        <Slider />
+
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/articles" element={<Articles />}/>
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </div>
 
-      <About />
+      {/* <About />
 
       <Animal />
 
@@ -31,7 +40,7 @@ function App() {
 
       <Contact />
 
-      <Info />
+      <Info /> */}
 
       <Footer />
     </>
