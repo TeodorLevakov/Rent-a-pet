@@ -1,4 +1,4 @@
-export default function Register() {
+export default function ArticleCreate() {
     return (
         <section className="contact_section layout_padding-top">
             <div className="container-fluid">
@@ -7,32 +7,36 @@ export default function Register() {
                         <div className="form_container">
                             <div className="heading_container">
                                 <img src="images/heading-img.png" alt="" />
-                                <h2>Register</h2>
-                                <p>
-                                    
-                                </p>
+                                <h2>Create Article</h2>
+                                
                             </div>
                             <form action="">
                                 <div>
-                                    <input type="text" placeholder="User Name " />
+                                    <input type="text" id="name" name="name" placeholder="Animal name " />
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email" />
+                                    <input type="text" id="category" name="category" placeholder="Animal category" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Password" />
+                                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Animal image" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Repeat  Password" />
+                                    <input
+                                        type="text"
+                                        id="message"
+                                        name="message"
+                                        className="message-box"
+                                        placeholder="Message"
+                                    />
                                 </div>
-                                
+
                                 <div className="d-flex ">
                                     <button>SEND</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>

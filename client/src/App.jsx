@@ -12,6 +12,7 @@ import Home from "./components/home/Home"
 import Us from "./components/us/Us"
 import Articles from "./components/articles/Articles"
 import Register from "./components/register/Register"
+import ArticleCreate from "./components/article-create/ArticleCreate"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/articles" element={<Articles />}/>
+          <Route path="/articles/create" element={<ArticleCreate />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>
