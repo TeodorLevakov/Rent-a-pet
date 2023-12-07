@@ -8,10 +8,14 @@ import * as commentService from '../../services/commentService';
 export default function ArticleDetails() {
     const { articleId } = useParams();
     const [article, setArticle] = useState({});
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         gameService.getOne(articleId)
             .then(setArticle);
+
+        commentService.getAll()
+            .then(setComments);
     }, [articleId]);
 
     const addCommentHandler = async (e) => {
@@ -42,6 +46,15 @@ export default function ArticleDetails() {
 
                 <div className="details-comments">
                     <h2>Comments:</h2>
+                    {comments.map(({_id, user, text}) => (
+                        <li key={_id} className="comment">
+                            <p>{user}: {text}</p>
+                        </li>
+                    ))}
+
+                    {comments.length === 0 && (
+                        <p className="no-comment">No comments.</p>
+                    )}
                     {/* <ul>
                         {comments.map(({ _id, text, owner: { email } }) => (
                             <li key={_id} className="comment">
