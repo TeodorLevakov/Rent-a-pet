@@ -25,7 +25,8 @@ export default function ArticleDetails() {
 
         try {
             const newComment = await commentService.create(articleId, data.get('user'), data.get('comment'));
-            console.log(newComment);
+
+            setComments(state => [...state, newComment]);
         } catch (err) {
             console.log(err);
         }
