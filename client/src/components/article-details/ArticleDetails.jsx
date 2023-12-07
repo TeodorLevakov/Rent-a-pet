@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import * as gameService from '../../services/articleService';
+import * as articleService from '../../services/articleService';
 import * as commentService from '../../services/commentService';
 
 
@@ -11,10 +11,10 @@ export default function ArticleDetails() {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        gameService.getOne(articleId)
+        articleService.getOne(articleId)
             .then(setArticle);
 
-        commentService.getAll()
+        commentService.getAll(articleId)
             .then(setComments);
     }, [articleId]);
 
